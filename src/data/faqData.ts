@@ -16,7 +16,7 @@ export const faqs = [
     answer: "Aceitamos dinheiro, PIX, cartões de crédito e débito."
   },
   {
-    question: "Vocês atendem empresas e residências?",
+    question: "A Voitechrj atende a domicílio?",
     answer: "Não, não atendemos a domicílio."
   },
   {

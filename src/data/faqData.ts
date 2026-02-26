@@ -1,7 +1,7 @@
 export const faqs = [
   {
     question: "Quais tipos de serviços de manutenção vocês oferecem?",
-    answer: "Oferecemos manutenção preventiva e corretiva para computadores, notebooks, redes, impressoras e periféricos. Também realizamos formatação, remoção de vírus e upgrades de hardware."
+    answer: "Oferecemos manutenção preventiva e corretiva para computadores e notebooks. Também realizamos formatação, remoção de vírus e upgrades de hardware."
   },
   {
     question: "Qual o tempo de resposta para um chamado?",
@@ -13,11 +13,11 @@ export const faqs = [
   },
   {
     question: "Quais as formas de pagamento aceitas?",
-    answer: "Aceitamos dinheiro, PIX, cartões de crédito e débito. Para empresas, oferecemos opções de faturamento mensal mediante contrato."
+    answer: "Aceitamos dinheiro, PIX, cartões de crédito e débito."
   },
   {
     question: "Vocês atendem empresas e residências?",
-    answer: "Sim! Atendemos tanto clientes residenciais quanto pequenas e médias empresas, com soluções personalizadas para cada necessidade."
+    answer: "Não, não atendemos a domicílio."
   },
   {
     question: "Vocês têm loja física?",

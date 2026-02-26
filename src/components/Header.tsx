@@ -69,7 +69,7 @@ export default function Header() {
               Diferenciais
             </button>
             <button onClick={() => scrollToSection("booking")} className="text-left text-gray-300 hover:text-[var(--color-primary)]">
-              Agenda
+              Agendar
             </button>
             <button onClick={() => scrollToSection("social-proof")} className="text-left text-gray-300 hover:text-[var(--color-primary)]">
               Depoimentos

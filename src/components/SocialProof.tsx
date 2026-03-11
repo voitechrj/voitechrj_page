@@ -64,7 +64,7 @@ function TestimonialCard({ review, index }: { review: any, index: number }) {
 
   return (
     <motion.div
-      className="h-48 sm:h-56 bg-[#1e1e1e] p-4 md:p-6 rounded-2xl shadow-sm border border-white/5 hover:border-[var(--color-primary)] transition-colors flex flex-col"
+      className={`h-48 sm:h-56 bg-[#1e1e1e] p-4 md:p-6 rounded-2xl shadow-sm border border-white/5 hover:border-[var(--color-primary)] transition-colors flex-col ${index >= 4 ? 'hidden md:flex' : 'flex'}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -102,10 +102,6 @@ function TestimonialCard({ review, index }: { review: any, index: number }) {
 }
 
 export default function SocialProof() {
-  const chunkedTestimonials = [];
-  for (let i = 0; i < testimonials.length; i += 4) {
-    chunkedTestimonials.push(testimonials.slice(i, i + 4));
-  }
   return (
     <section id="social-proof" className="py-20 bg-[#171717]">
       <div className="w-[90%] md:w-[80%] mx-auto px-4">
@@ -119,29 +115,10 @@ export default function SocialProof() {
           </p>
         </div>
 
-        {/* Mobile: 2x2 Grid Carousel */}
-        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {chunkedTestimonials.map((group, groupIndex) => (
-            <div key={groupIndex} className="w-full flex-shrink-0 snap-center grid grid-cols-2 gap-3 sm:gap-4">
-              {group.map((review, index) => (
-                <TestimonialCard key={index} review={review} index={groupIndex * 4 + index} />
-              ))}
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop: Standard Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {testimonials.map((review, index) => (
             <TestimonialCard key={index} review={review} index={index} />
           ))}
-        </div>
-
-        {/* Mobile Swipe Indicator below carousel */}
-        <div className="md:hidden flex items-center justify-center gap-1 text-gray-500 mt-4 mb-4 text-xs italic">
-          <ChevronRight size={14} className="rotate-180" />
-          <span>Deslize</span>
-          <ChevronRight size={14} />
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-center text-center">

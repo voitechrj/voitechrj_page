@@ -64,7 +64,7 @@ function TestimonialCard({ review, index }: { review: any, index: number }) {
 
   return (
     <motion.div
-      className="w-[80vw] sm:w-[350px] md:w-auto flex-shrink-0 snap-center bg-[#1e1e1e] p-6 rounded-2xl shadow-sm border border-white/5 hover:border-[var(--color-primary)] transition-colors flex flex-col h-full"
+      className="w-[75vw] sm:w-[300px] md:w-auto flex-shrink-0 snap-center bg-[#1e1e1e] p-5 md:p-6 rounded-2xl shadow-sm border border-white/5 hover:border-[var(--color-primary)] transition-colors flex flex-col h-full"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -115,15 +115,15 @@ export default function SocialProof() {
           </p>
         </div>
 
-        <div className="md:hidden flex items-center justify-end gap-1 text-gray-400 mb-4 text-sm pr-2">
-          <span>Deslize para ver mais</span>
-          <ChevronRight size={16} />
-        </div>
-
-        <div className="-mx-4 px-4 md:mx-0 md:px-0 flex items-stretch overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {testimonials.map((review, index) => (
-            <TestimonialCard key={index} review={review} index={index} />
-          ))}
+        {/* Gradient mask to indicate scrollability on mobile */}
+        <div className="relative">
+          <div className="md:hidden absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#171717] to-transparent z-10 pointer-events-none"></div>
+          
+          <div className="-mx-4 px-4 md:mx-0 md:px-0 flex items-stretch overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {testimonials.map((review, index) => (
+              <TestimonialCard key={index} review={review} index={index} />
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-center text-center">

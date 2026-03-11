@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star, ExternalLink } from "lucide-react";
 
 export default function Hero() {
   const scrollToBooking = () => {
@@ -58,22 +58,46 @@ export default function Hero() {
             <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
               Especialistas em upgrade de performance, limpeza e manutenção. Agende a entrega do seu equipamento e deixe o resto conosco.
             </p>
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex flex-col items-center lg:items-start gap-3 w-full sm:w-max">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToBooking}
-                className="bg-[var(--color-primary)] text-white text-lg font-bold px-8 py-4 rounded-full shadow-lg hover:bg-[var(--color-primary-hover)] transition-colors inline-flex items-center justify-center gap-2"
+                className="w-full h-[60px] bg-[var(--color-primary)] text-white text-lg font-bold px-8 rounded-full shadow-lg hover:bg-[var(--color-primary-hover)] transition-colors flex items-center justify-center gap-2"
               >
                 Agendar pelo WhatsApp
                 <ArrowRight size={20} />
               </motion.button>
+
+              <div className="flex flex-row gap-3 w-full">
+                <motion.a 
+                  href="https://www.google.com.br/search?q=Voitechrj&ludocid=11424479023818913990&lsig=AB86z5UapBfcaAyfAOMLey7SV1XN#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D&lrd=0x97013146222ed5:0x9e8be72486a0b8c6,1,,,,"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 h-[60px] flex items-center justify-center gap-1.5 bg-[#1e1e1e] border border-white/20 text-white font-medium px-2 rounded-full shadow-sm hover:bg-[#2a2a2a] hover:border-[var(--color-primary)] transition-all text-sm"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <ExternalLink size={16} className="flex-shrink-0" />
+                  <span className="truncate">Ver Avaliações</span>
+                </motion.a>
+
+                <motion.a 
+                  href="https://g.page/r/Cca4oIYk54ueEBE/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 h-[60px] flex items-center justify-center gap-1.5 bg-[#1e1e1e] border border-white/20 text-white font-medium px-2 rounded-full shadow-sm hover:bg-[#2a2a2a] hover:border-[var(--color-primary)] transition-all text-sm"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <Star size={16} fill="currentColor" className="text-yellow-400 flex-shrink-0" />
+                  <span className="truncate">Avaliar</span>
+                </motion.a>
+              </div>
             </div>
           </motion.div>
 
           {/* Service Cards Content */}
           <motion.div 
-            className="lg:w-1/2 w-full relative"
+            className="lg:w-1/2 w-full relative mt-12 lg:mt-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

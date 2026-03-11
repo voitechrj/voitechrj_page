@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -25,6 +25,30 @@ const testimonials = [
     text: "Rápido e eficiente. Meu computador estava travando muito e agora parece novo.",
     rating: 5,
     relative_time_description: "1 semana atrás"
+  },
+  {
+    author_name: "Lucas Fernandes",
+    text: "Atendimento impecável! Meu notebook estava superaquecendo e desligando sozinho. Fizeram a limpeza e troca da pasta térmica, agora está perfeito.",
+    rating: 5,
+    relative_time_description: "2 dias atrás"
+  },
+  {
+    author_name: "Fernanda Lima",
+    text: "Colocaram um SSD no meu computador antigo e parece que comprei um novo. Muito atenciosos e entregaram no prazo combinado.",
+    rating: 5,
+    relative_time_description: "1 mês atrás"
+  },
+  {
+    author_name: "Roberto Alves",
+    text: "Preço justo e muita transparência. Explicaram exatamente o que precisava ser feito sem inventar problemas. Ganharam um cliente fiel.",
+    rating: 5,
+    relative_time_description: "2 semanas atrás"
+  },
+  {
+    author_name: "Juliana Mendes",
+    text: "Excelente profissional! Salvou meus arquivos de um HD corrompido e formatou a máquina deixando tudo super rápido. Recomendo muito.",
+    rating: 5,
+    relative_time_description: "4 meses atrás"
   }
 ];
 
@@ -32,41 +56,26 @@ export default function SocialProof() {
   return (
     <section id="social-proof" className="py-20 bg-[#171717]">
       <div className="w-[90%] md:w-[80%] mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-display">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">
             Por que Nossos Clientes Confiam na voitechrj?
           </h2>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.a 
-              href="https://search.google.com/local/reviews?placeid=ChIJ1S4iRjEBlwARxrighiTni54"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#1e1e1e] border border-white/20 text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-[#2a2a2a] hover:border-[var(--color-primary)] transition-all"
-              whileHover={{ scale: 1.02 }}
-            >
-              <ExternalLink size={18} />
-              Ver Avaliações no Google
-            </motion.a>
-
-            <motion.a 
-              href="https://search.google.com/local/writereview?placeid=ChIJ1S4iRjEBlwARxrighiTni54"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-[var(--color-primary-hover)] transition-colors"
-              whileHover={{ scale: 1.02 }}
-            >
-              <Star size={18} fill="currentColor" />
-              Avalie-nos no Google
-            </motion.a>
-          </div>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Veja o que dizem as pessoas que já utilizaram nossos serviços.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="md:hidden flex items-center justify-end gap-1 text-gray-400 mb-4 text-sm pr-2">
+          <span>Deslize para ver mais</span>
+          <ChevronRight size={16} />
+        </div>
+
+        <div className="-mx-4 px-4 md:mx-0 md:px-0 flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {testimonials.map((review, index) => (
             <motion.div
               key={index}
-              className="bg-[#1e1e1e] p-6 rounded-2xl shadow-sm border border-white/5 hover:border-[var(--color-primary)] transition-colors flex flex-col h-full"
+              className="w-[80vw] sm:w-[350px] md:w-auto flex-shrink-0 snap-center bg-[#1e1e1e] p-6 rounded-2xl shadow-sm border border-white/5 hover:border-[var(--color-primary)] transition-colors flex flex-col h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -91,6 +100,30 @@ export default function SocialProof() {
               <p className="text-xs text-gray-500 mt-auto">{review.relative_time_description}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-center text-center">
+          <h3 className="text-white text-3xl font-bold mb-2 font-display tracking-tight">Voitechrj</h3>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-lg">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-300 font-medium">5,0</span>
+              <div className="flex text-yellow-400 gap-0.5">
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+              </div>
+            </div>
+            <a 
+              href="https://www.google.com.br/search?q=Voitechrj&ludocid=11424479023818913990&lsig=AB86z5UapBfcaAyfAOMLey7SV1XN#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D&lrd=0x97013146222ed5:0x9e8be72486a0b8c6,1,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#8ab4f8] hover:underline font-medium"
+            >
+              139 avaliações no Google
+            </a>
+          </div>
         </div>
       </div>
     </section>

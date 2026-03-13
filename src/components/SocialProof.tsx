@@ -76,7 +76,7 @@ function TestimonialCard({ review, index }: { review: any, index: number }) {
         </div>
         <div>
           <p className="font-bold text-white text-xs md:text-sm line-clamp-1">{review.author_name}</p>
-          <div className="flex text-yellow-400 mt-0.5">
+          <div className="flex text-white-400 mt-0.5">
             {[...Array(5)].map((_, i) => (
               <Star key={i} fill={i < review.rating ? "currentColor" : "none"} className="w-2.5 h-2.5 md:w-3 md:h-3" />
             ))}
@@ -126,7 +126,7 @@ export default function SocialProof() {
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-lg">
             <div className="flex items-center gap-2">
               <span className="text-gray-300 font-medium">5,0</span>
-              <div className="flex text-yellow-400 gap-0.5">
+              <div className="flex text-white-400 gap-0.5">
                 <Star size={18} fill="currentColor" />
                 <Star size={18} fill="currentColor" />
                 <Star size={18} fill="currentColor" />

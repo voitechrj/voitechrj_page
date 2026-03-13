@@ -38,7 +38,7 @@ export default function Features() {
   return (
     <section id="features" className="py-20 bg-[#0a0a0a]">
       <div className="w-[90%] md:w-[80%] mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 select-none">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">
             Nossos Diferenciais
           </h2>
